@@ -1,6 +1,6 @@
-package com.example.demo3.controller;
+package com.example.demo.controller;
 
-import com.example.demo3.entity.User;
+import com.example.demo.entity.User;
 import com.ldh.utils.aop.RedisLockAop;
 import com.ldh.utils.comp.RedisLimitComponent;
 import lombok.extern.slf4j.Slf4j;

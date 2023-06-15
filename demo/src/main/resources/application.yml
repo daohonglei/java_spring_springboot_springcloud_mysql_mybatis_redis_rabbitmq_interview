@@ -24,10 +24,6 @@ spring:
     restart:
       exclude: static/** , com/** ,application.yml
       enabled: true
-  activiti:
-    database-schema-update: true
-    history-level: full
-    db-history-used: true
 
 
 

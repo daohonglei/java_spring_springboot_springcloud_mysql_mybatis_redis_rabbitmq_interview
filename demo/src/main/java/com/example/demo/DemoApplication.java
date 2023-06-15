@@ -1,15 +1,14 @@
-package com.example.demo3;
+package com.example.demo;
 
 import com.ldh.utils.aop.RedisLimitAop;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@SpringBootApplication(scanBasePackageClasses = {RedisLimitAop.class, Demo3Application.class})
-public class Demo3Application {
+@SpringBootApplication(scanBasePackageClasses = {RedisLimitAop.class, DemoApplication.class})
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Demo3Application.class, args);
+        SpringApplication.run(DemoApplication.class, args);
 
         Runtime.getRuntime().addShutdownHook(new Thread(()->{
             System.out.println("addShutdownHook");

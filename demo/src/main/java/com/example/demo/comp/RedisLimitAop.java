@@ -1,13 +1,10 @@
-package com.example.demo3.comp;
+package com.example.demo.comp;
 
 import com.ldh.utils.comp.RedisLimitComponent;
-import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
 

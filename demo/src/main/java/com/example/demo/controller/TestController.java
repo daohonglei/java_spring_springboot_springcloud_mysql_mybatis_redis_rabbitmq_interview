@@ -1,4 +1,4 @@
-package com.example.demo3.controller;
+package com.example.demo.controller;
 
 import com.google.common.util.concurrent.RateLimiter;
 import com.ldh.utils.comp.RedisLimitComponent;
