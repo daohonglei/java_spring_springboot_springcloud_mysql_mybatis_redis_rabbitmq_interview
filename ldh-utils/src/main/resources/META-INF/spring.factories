@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.ldh.utils.config.RedisLockComponentConfig,\
+  com.ldh.utils.config.RedisLoginComponentConfig,\
+  com.ldh.utils.config.RedisLimitComponentConfig
+

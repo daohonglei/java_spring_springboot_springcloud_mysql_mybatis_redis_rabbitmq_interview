@@ -1,0 +1,38 @@
+spring:
+  redis:
+    enable: true
+    database: 10
+    password: admin@123
+    sentinel:
+      master: mymaster
+      nodes: 10.238.239.116:26379,10.238.239.117:26379,10.238.239.118:26379
+    namespace: ldh
+    lock:
+      maxRetryTime: 30
+      maxKeyExpireTime: 30
+      enabled: true
+    login:
+      retryIntervalTime: 5
+      maxRetryTimes: 3
+      enabled: true
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/test2?nullCatalogMeansCurrent=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  devtools:
+    restart:
+      exclude: static/** , com/** ,application.yml
+      enabled: true
+  activiti:
+    database-schema-update: true
+    history-level: full
+    db-history-used: true
+
+
+
+
+debug: true
+server:
+  port: 8090
+
