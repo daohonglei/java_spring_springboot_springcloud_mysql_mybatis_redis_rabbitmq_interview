@@ -128,9 +128,9 @@ public class ESApiTest {
         BulkRequest bulkRequest = new BulkRequest();
         bulkRequest.timeout("10s");
         ArrayList<User> userList = new ArrayList<>(3);
-        userList.add(new User("张三1",21));
-        userList.add(new User("张三2",22));
-        userList.add(new User("张三3",23));
+        userList.add(new User("动物园",21));
+        userList.add(new User("动作片",22));
+        userList.add(new User("做作业",23));
         for (int i=0;i<userList.size();i++){
             bulkRequest.add(new IndexRequest("test_index")
                     .id(""+(i+1))
@@ -152,14 +152,14 @@ public class ESApiTest {
         // 查询条件
         // QueryBuilders.termQuery 精确查询
         TermQueryBuilder termBuilder = QueryBuilders.termQuery("name", "张三");
-        MatchQueryBuilder queryBuilder = QueryBuilders.matchQuery("name", "张三");
+        MatchQueryBuilder queryBuilder = QueryBuilders.matchQuery("name", "动物园");
         MatchQueryBuilder queryBuilder2 = QueryBuilders.matchQuery("age", "22");
 
 
         BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
         //must中的条件，必须全部匹配。需要将字段的type设置为keyword 或者 指定字段时用 `字段.keyword`(实际测试并不生效，可能还和analyzer有关)
-        boolQueryBuilder.must(QueryBuilders.matchQuery("name", "作动"));
-        boolQueryBuilder.must(QueryBuilders.matchQuery("age", 22));
+        //boolQueryBuilder.must(QueryBuilders.matchQuery("name", "动业"));
+        //boolQueryBuilder.must(QueryBuilders.matchQuery("age", 22));
         //匹配should中的条件（匹配1个或多个，根据需求配置）
         //boolQueryBuilder.should(QueryBuilders.matchQuery("age", "21"));
         //matchPhraseQuery 通配符搜索查询，支持 * 和 ?, ?匹配任意单个字符，这么查询可能慢
@@ -173,7 +173,7 @@ public class ESApiTest {
 //        builder.size(10);
         //builder.query(queryBuilder);
         //builder.query(queryBuilder2);
-        builder.query(boolQueryBuilder);
+        builder.query(queryBuilder);
         searchRequest.source(builder);
         SearchResponse searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
         System.out.println("获取查询对象 "+JSON.toJSONString(searchResponse.getHits()));

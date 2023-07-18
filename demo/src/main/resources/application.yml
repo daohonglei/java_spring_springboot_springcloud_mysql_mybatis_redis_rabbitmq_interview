@@ -1,3 +1,5 @@
+server:
+  port: 8090
 spring:
   redis:
     enable: true
@@ -28,7 +30,5 @@ spring:
 
 
 
-debug: true
-server:
-  port: 8090
+debug: false
 

@@ -7,10 +7,12 @@ import com.ldh.utils.comp.RedisLoginComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -128,5 +130,11 @@ public class TestController {
         }
         log.info("获取令牌成功，时间{}", LocalDateTime.now().format(dtf));
         return "请求成功";
+    }
+
+    @RequestMapping("/test")
+    public String testTest() {
+        log.info("this is a log from spring boot!");
+        return  new Date().toLocaleString();
     }
 }
