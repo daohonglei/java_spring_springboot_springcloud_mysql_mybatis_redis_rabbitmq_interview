@@ -1,6 +1,8 @@
 server:
   port: 8090
 spring:
+  application:
+    name: demo
   redis:
     enable: true
     database: 10
